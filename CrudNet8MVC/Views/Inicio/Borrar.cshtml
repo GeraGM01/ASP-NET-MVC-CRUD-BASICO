@@ -1,0 +1,58 @@
+﻿@model CrudNet8MVC.Models.Contacto
+@{
+    ViewData["Title"] = "Editar un contacto";
+}
+
+<h1 class="text-center">Contacto con .NET 8 (.NET Core MVC)</h1>
+
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h3 class="text-white"><strong>Borrar un usuario</strong></h3>
+            </div>
+            <div class="card-body">
+
+                <form asp-action="Borrar">
+
+                    @* AQUI MANDAMOS EL ID DEL USUARIO, PERO LO ENVIAMOS COMO CAMPO OCULTO *@
+                    <input type="hidden" asp-for="Id" />  <!--Campo oculto para mandar el id y el metodo editar lo pueda recibir-->
+
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" disabled/>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Telefono" class="control-label"></label>
+                        <input asp-for="Telefono" class="form-control" disabled />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Celular" class="control-label"></label>
+                        <input asp-for="Celular" class="form-control" disabled />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" disabled />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FechaCreacion" class="control-label"></label>
+                        <input asp-for="FechaCreacion" class="form-control" disabled />
+                    </div>
+
+                    <div class="form-group" mt-3>
+                        <button type="submit" class="btn btn-danger d-block mx-auto"><i class="fa-solid fa-trash"></i> Borrar usuario</button>
+                    </div>
+                </form>
+
+                <a asp-controller="Inicio" asp-action="Index">Volver</a>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
